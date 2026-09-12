@@ -1,6 +1,8 @@
 // Point this at your deployed backend once you deploy (e.g. "https://your-api.onrender.com")
-export const API_BASE = "http://localhost:8000";
-
+// Frontend and backend deploy together on Vercel Services under one domain,
+// so calls are relative ("/api/..."). Locally, Vite's dev-server proxy (see
+// vite.config.js) forwards "/api" to uvicorn on port 8000.
+export const API_BASE = "";
 export const profile = {
   name: "Your Name",
   role: "Data Scientist",
