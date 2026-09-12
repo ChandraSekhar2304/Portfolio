@@ -1,0 +1,29 @@
+[
+  {
+    "id": "churn-prediction",
+    "title": "Customer Churn Prediction",
+    "summary": "Built a gradient-boosted model to flag subscribers likely to cancel 30 days out, replacing a rule-based heuristic the retention team had been using.",
+    "metric": "Lifted recall on at-risk customers from 41% to 76%, at a precision retention could act on.",
+    "stack": ["Python", "XGBoost", "Pandas", "scikit-learn", "MLflow"],
+    "link": "https://github.com/yourname/churn-prediction",
+    "year": "2025"
+  },
+  {
+    "id": "demand-forecasting",
+    "title": "Store-Level Demand Forecasting",
+    "summary": "Forecasted weekly SKU-level demand across 120 stores using a hierarchical time-series approach, feeding directly into the inventory ordering system.",
+    "metric": "Cut forecast error (MAPE) from 22% to 13%, reducing stockouts in the pilot region.",
+    "stack": ["Python", "Prophet", "LightGBM", "Airflow", "PostgreSQL"],
+    "link": "https://github.com/yourname/demand-forecasting",
+    "year": "2024"
+  },
+  {
+    "id": "resume-screener",
+    "title": "NLP Resume Screener",
+    "summary": "Fine-tuned a transformer classifier to rank incoming applications against a role's requirements, with an explanation of which lines drove the score.",
+    "metric": "Cut recruiter first-pass screening time by roughly 60% in a two-week trial.",
+    "stack": ["Python", "PyTorch", "HuggingFace", "FastAPI", "Docker"],
+    "link": "https://github.com/yourname/resume-screener",
+    "year": "2024"
+  }
+]
