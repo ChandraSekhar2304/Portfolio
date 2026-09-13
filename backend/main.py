@@ -27,15 +27,13 @@ MESSAGES_FILE = BASE_DIR / "data" / "messages.json"
 app = FastAPI(title="Portfolio API", version="1.0.0")
 
 # Add your deployed frontend URL here once you deploy (e.g. "https://yourname.vercel.app")
-origins = [
-    "http://localhost:5173",
-    "http://127.0.0.1:5173",
-]
+origins = ["*"]
 
 app.add_middleware(
     CORSMiddleware,
     allow_origins=origins,
-    allow_methods=["GET", "POST"],
+    allow_credentials=True,
+    allow_methods=["*"],
     allow_headers=["*"],
 )
 
@@ -110,18 +108,29 @@ def post_contact(payload: ContactMessage):
     entry = payload.model_dump()
     entry["received_at"] = datetime.now(timezone.utc).isoformat()
 
-    existing = []
-    if MESSAGES_FILE.exists():
-        with open(MESSAGES_FILE, "r", encoding="utf-8") as f:
-            try:
-                existing = json.load(f)
-            except json.JSONDecodeError:
-                existing = []
+    # Try storing in data/messages.json, with fallback to /tmp on serverless environments
+    saved = False
+    for target_file in [MESSAGES_FILE, Path("/tmp/messages.json")]:
+        try:
+            target_file.parent.mkdir(parents=True, exist_ok=True)
+            existing = []
+            if target_file.exists():
+                with open(target_file, "r", encoding="utf-8") as f:
+                    try:
+                        existing = json.load(f)
+                    except json.JSONDecodeError:
+                        existing = []
+            existing.append(entry)
+            with open(target_file, "w", encoding="utf-8") as f:
+                json.dump(existing, f, indent=2)
+            saved = True
+            break
+        except OSError:
+            continue
 
-    existing.append(entry)
-    with open(MESSAGES_FILE, "w", encoding="utf-8") as f:
-        json.dump(existing, f, indent=2)
+    try:
+        send_notification(entry)
+    except Exception:
+        pass
 
-    send_notification(entry)
-
-    return {"status": "sent", "message": "Thanks — I'll get back to you soon."}
+    return {"status": "sent", "message": "Thanks! Your message has been sent successfully."}

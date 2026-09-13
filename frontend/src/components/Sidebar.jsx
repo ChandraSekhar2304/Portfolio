@@ -1,6 +1,21 @@
+import { useState, useEffect } from "react";
 import { profile } from "../data/content.js";
 
 export default function Sidebar({ sections, active, onNavigate }) {
+  const [isPhotoExpanded, setIsPhotoExpanded] = useState(false);
+
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.key === "Escape") {
+        setIsPhotoExpanded(false);
+      }
+    };
+    if (isPhotoExpanded) {
+      window.addEventListener("keydown", handleKeyDown);
+    }
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [isPhotoExpanded]);
+
   const handleClick = (id) => (e) => {
     e.preventDefault();
     onNavigate(id);
@@ -8,22 +23,34 @@ export default function Sidebar({ sections, active, onNavigate }) {
   };
 
   return (
-    <aside className="sidebar">
-      <div className="sidebar-identity">
-        {profile.avatarUrl && (
-          <a href="#intro" onClick={handleClick("intro")} className="sidebar-avatar-link" aria-label={profile.name}>
-            <img
-              src={profile.avatarUrl}
-              alt={profile.name}
-              className="sidebar-avatar"
-            />
+    <>
+      <aside className="sidebar">
+        <div className="sidebar-identity">
+          {profile.avatarUrl && (
+            <button
+              type="button"
+              onClick={() => setIsPhotoExpanded(true)}
+              className="sidebar-avatar-button"
+              title="Click to view full photo"
+              aria-label="View larger profile photo"
+            >
+              <img
+                src={profile.avatarUrl}
+                alt={profile.name}
+                className="sidebar-avatar"
+              />
+              <span className="sidebar-avatar-hint" aria-hidden="true">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                  <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/>
+                </svg>
+              </span>
+            </button>
+          )}
+          <a href="#intro" onClick={handleClick("intro")} className="sidebar-name">
+            {profile.name}
           </a>
-        )}
-        <a href="#intro" onClick={handleClick("intro")} className="sidebar-name">
-          {profile.name}
-        </a>
-        <p className="sidebar-role">{profile.role}</p>
-      </div>
+          <p className="sidebar-role">{profile.role}</p>
+        </div>
 
       <nav className="sidebar-nav" aria-label="Section navigation">
         <ul>
@@ -49,5 +76,39 @@ export default function Sidebar({ sections, active, onNavigate }) {
         ))}
       </div>
     </aside>
+
+    {isPhotoExpanded && (
+      <div
+        className="avatar-lightbox-backdrop"
+        onClick={() => setIsPhotoExpanded(false)}
+        role="dialog"
+        aria-modal="true"
+        aria-label="Profile photo enlarged view"
+      >
+        <div className="avatar-lightbox-card" onClick={(e) => e.stopPropagation()}>
+          <button
+            type="button"
+            className="avatar-lightbox-close"
+            onClick={() => setIsPhotoExpanded(false)}
+            aria-label="Close photo preview"
+          >
+            &times;
+          </button>
+          <div className="avatar-lightbox-img-wrapper">
+            <img
+              src={profile.avatarUrl}
+              alt={profile.name}
+              className="avatar-lightbox-img"
+            />
+          </div>
+          <div className="avatar-lightbox-info">
+            <h3 className="avatar-lightbox-name">{profile.name}</h3>
+            <p className="avatar-lightbox-role">{profile.role}</p>
+            <p className="avatar-lightbox-location">{profile.location}</p>
+          </div>
+        </div>
+      </div>
+    )}
+  </>
   );
 }
