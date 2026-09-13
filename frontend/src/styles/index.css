@@ -571,9 +571,17 @@ h1, h2, h3 {
   border-color: var(--accent);
 }
 
-.contact-form button {
-  align-self: flex-start;
+.contact-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
   margin-top: 4px;
+}
+
+.contact-actions button,
+.contact-actions .btn {
+  margin-top: 0;
 }
 
 .form-status {
