@@ -57,7 +57,22 @@ export default function Contact({ id }) {
     }
   };
 
-  const mailtoUrl = `mailto:${profile.email}?subject=${encodeURIComponent(
+  const [copied, setCopied] = useState(false);
+
+  const handleCopyEmail = async () => {
+    try {
+      await navigator.clipboard.writeText(profile.email);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2200);
+    } catch {
+      // Fallback
+      setCopied(false);
+    }
+  };
+
+  const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(
+    profile.email
+  )}&su=${encodeURIComponent(
     "Portfolio Inquiry from " + (form.name || "Recruiter")
   )}&body=${encodeURIComponent(
     form.message || "Hi Chandra Sekhar, I saw your portfolio and would like to connect."
@@ -109,9 +124,23 @@ export default function Contact({ id }) {
           <button className="btn btn-primary" type="submit" disabled={status.state === "sending"}>
             {status.state === "sending" ? "Sending…" : "Send message"}
           </button>
-          <a className="btn btn-ghost" href={mailtoUrl}>
-            Open in Email App
+          <a
+            className="btn btn-ghost"
+            href={gmailUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            title="Compose instantly in Gmail"
+          >
+            Open Gmail
           </a>
+          <button
+            type="button"
+            className="btn btn-ghost btn-copy"
+            onClick={handleCopyEmail}
+            title="Copy email address"
+          >
+            {copied ? "✓ Copied!" : "Copy email"}
+          </button>
         </div>
 
         {status.state === "sent" && <p className="form-status form-status-ok">{status.detail}</p>}

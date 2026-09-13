@@ -584,6 +584,11 @@ h1, h2, h3 {
   margin-top: 0;
 }
 
+.btn-copy {
+  min-width: 106px;
+  justify-content: center;
+}
+
 .form-status {
   margin: 0;
   font-size: 0.9rem;
