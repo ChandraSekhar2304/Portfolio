@@ -13,7 +13,7 @@ export const profile = {
   links: [
     { label: "GitHub", href: "https://github.com/ChandraSekhar2304" },
     { label: "LinkedIn", href: "https://www.linkedin.com/in/banala-naga-bala-chandra-sekhar-kumar-941722291/" },
-    { label: "Kaggle", href: "https://www.kaggle.com/banalachandra" }
+    { label: "Kaggle", href: "https://www.kaggle.com/banalachandra" }]
 };
 
 export const about = {
