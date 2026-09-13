@@ -13,13 +13,17 @@ export default function Projects({ id }) {
       })
       .then((data) => {
         if (!cancelled && Array.isArray(data) && data.length > 0) {
-          // Merge API data with rich frontend fields if present
-          setProjectList((prev) =>
-            data.map((apiItem) => {
+          // Merge API data with frontend content taking precedence
+          setProjectList((prev) => {
+            const apiMerged = data.map((apiItem) => {
               const matched = prev.find((p) => p.id === apiItem.id) || {};
-              return { ...matched, ...apiItem };
-            })
-          );
+              return { ...apiItem, ...matched };
+            });
+            const localOnly = prev.filter(
+              (p) => !data.some((apiItem) => apiItem.id === p.id)
+            );
+            return [...apiMerged, ...localOnly];
+          });
         }
       })
       .catch(() => {

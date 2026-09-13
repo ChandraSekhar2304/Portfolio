@@ -15,7 +15,7 @@
       "VADER",
       "XGBoost"
     ],
-    "link": "https://github.com/ChandraSekhar2304/aspect-based-sentiment-analysis"
+    "link": "https://github.com/ChandraSekhar2304/Aspect_Based_Sentiment_Analysis"
   },
   {
     "id": "deepfake-detection-system",
@@ -32,6 +32,6 @@
       "TensorFlow",
       "Transfer Learning"
     ],
-    "link": "https://github.com/ChandraSekhar2304/deepfake-detection-system"
+    "link": "https://github.com/ChandraSekhar2304/Deepfake-Detection"
   }
 ]
