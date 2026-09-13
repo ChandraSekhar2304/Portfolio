@@ -4,17 +4,16 @@
 // vite.config.js) forwards "/api" to uvicorn on port 8000.
 export const API_BASE = "";
 export const profile = {
-  name: "Your Name",
+  name: "Banala Naga Bala Chandra Sekhar Kumar",
   role: "Data Scientist",
   tagline: "I turn messy data into models that ship.",
-  location: "Bengaluru, India",
-  email: "you@example.com",
+  location: "Hyderabad, India",
+  email: "banalachandrasekharkumar@gmail.com",
   resumeUrl: "/resume.pdf",
   links: [
-    { label: "GitHub", href: "https://github.com/yourname" },
-    { label: "LinkedIn", href: "https://linkedin.com/in/yourname" },
-    { label: "Kaggle", href: "https://kaggle.com/yourname" },
-  ],
+    { label: "GitHub", href: "https://github.com/ChandraSekhar2304" },
+    { label: "LinkedIn", href: "https://www.linkedin.com/in/banala-naga-bala-chandra-sekhar-kumar-941722291/" },
+    { label: "Kaggle", href: "https://www.kaggle.com/banalachandra" }
 };
 
 export const about = {
@@ -60,8 +59,8 @@ export const experience = [
   },
   {
     role: "B.Tech, Computer Science",
-    org: "Your University",
-    period: "2017 — 2021",
+    org: "R.V.R & J.C College Of Engineering",
+    period: "2022-2026",
     points: [],
   },
 ];
