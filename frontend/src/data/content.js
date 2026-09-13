@@ -9,7 +9,7 @@ export const profile = {
   tagline: "I turn messy data into models that ship.",
   location: "Hyderabad, India",
   email: "banalachandrasekharkumar@gmail.com",
-  resumeUrl: "/resume.pdf",
+  resumeUrl: "https://drive.google.com/file/d/1O_fGm1wIebXmYHw0dHEDi4eULgSdrGik/view?usp=sharing",
   links: [
     { label: "GitHub", href: "https://github.com/ChandraSekhar2304" },
     { label: "LinkedIn", href: "https://www.linkedin.com/in/banala-naga-bala-chandra-sekhar-kumar-941722291/" },
@@ -38,32 +38,31 @@ export const skills = [
   },
 ];
 
-export const experience = [
+export const education = [
   {
-    role: "Data Scientist",
-    org: "Company Name",
-    period: "2023 — Present",
-    points: [
-      "Built and shipped the churn model described in Projects, now running as a weekly batch job.",
-      "Partnered with the retention team to translate model output into an action a human could actually take.",
+    degree: "B.Tech in Computer Science and Engineering",
+    institution: "R.V.R & J.C College of Engineering",
+    period: "2022 — 2026",
+    location: "Guntur, Andhra Pradesh",
+    details: [
+      "Specializing in Machine Learning, Statistical Modeling, and Data Engineering.",
+      "Key Coursework: Machine Learning, Deep Learning, Data Structures & Algorithms, Database Management Systems (DBMS), Probability & Statistics, Python Programming.",
     ],
   },
   {
-    role: "Data Analyst",
-    org: "Previous Company",
-    period: "2021 — 2023",
-    points: [
-      "Owned weekly reporting for a 12-person growth team and cut report turnaround from two days to same-day.",
-      "Ran and analyzed pricing experiments across three markets.",
+    degree: "Intermediate / Higher Secondary (MPC)",
+    institution: "Junior College",
+    period: "2020 — 2022",
+    location: "Andhra Pradesh, India",
+    details: [
+      "Specialized in Mathematics, Physics, and Chemistry (MPC).",
+      "Developed a strong analytical foundation in mathematical problem-solving and logic.",
     ],
-  },
-  {
-    role: "B.Tech, Computer Science",
-    org: "R.V.R & J.C College Of Engineering",
-    period: "2022-2026",
-    points: [],
   },
 ];
+
+// Backwards compatibility alias
+export const experience = education;
 
 // Fallback data used only if the backend isn't running — the live source of truth
 // is backend/data/projects.json, served at GET /api/projects.

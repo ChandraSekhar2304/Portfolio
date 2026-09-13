@@ -3,7 +3,7 @@ import Sidebar from "./components/Sidebar.jsx";
 import Hero from "./components/Hero.jsx";
 import About from "./components/About.jsx";
 import Skills from "./components/Skills.jsx";
-import Experience from "./components/Experience.jsx";
+import Education from "./components/Education.jsx";
 import Projects from "./components/Projects.jsx";
 import Contact from "./components/Contact.jsx";
 
@@ -11,7 +11,7 @@ const SECTIONS = [
   { id: "intro", label: "Intro" },
   { id: "about", label: "About" },
   { id: "skills", label: "Skills" },
-  { id: "experience", label: "Experience" },
+  { id: "education", label: "Education" },
   { id: "projects", label: "Projects" },
   { id: "contact", label: "Contact" },
 ];
@@ -26,7 +26,7 @@ export default function App() {
         <Hero id="intro" />
         <About id="about" />
         <Skills id="skills" />
-        <Experience id="experience" />
+        <Education id="education" />
         <Projects id="projects" />
         <Contact id="contact" />
         <footer className="footer">

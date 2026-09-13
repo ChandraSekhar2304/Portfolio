@@ -8,12 +8,12 @@ export default function Hero({ id }) {
         {profile.tagline}
       </h1>
       <p className="hero-sub">
-        {profile.name} — {profile.role}. Scroll down for projects, experience, and a way to reach me.
+        {profile.name} — {profile.role}. Scroll down for projects, education, and a way to reach me.
       </p>
 
       <div className="hero-actions">
-        <a className="btn btn-primary" href={profile.resumeUrl} download>
-          Download résumé
+        <a className="btn btn-primary" href={profile.resumeUrl} target="_blank" rel="noopener noreferrer">
+          View résumé
         </a>
         <a className="btn btn-ghost" href="#projects" onClick={(e) => {
           e.preventDefault();

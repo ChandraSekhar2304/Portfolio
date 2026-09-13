@@ -144,23 +144,34 @@ h1, h2, h3 {
   padding: 0;
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: 4px;
 }
 
 .sidebar-nav a {
   text-decoration: none;
   color: var(--text-muted);
-  font-size: 0.95rem;
-  border-left: 2px solid transparent;
-  padding-left: 12px;
-  margin-left: -14px;
-  transition: color 0.15s ease, border-color 0.15s ease;
+  font-size: 0.93rem;
+  font-weight: 450;
+  padding: 7px 12px;
+  border-radius: 6px;
+  margin-left: -12px;
+  margin-right: -12px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  transition: background-color 0.18s ease, color 0.18s ease, transform 0.18s ease;
 }
 
-.sidebar-nav a:hover,
-.sidebar-nav a.is-active {
+.sidebar-nav a:hover {
   color: var(--text);
-  border-left-color: var(--accent);
+  background: rgba(31, 75, 153, 0.055);
+  transform: translateX(3px);
+}
+
+.sidebar-nav a.is-active {
+  color: var(--accent);
+  background: rgba(31, 75, 153, 0.09);
+  font-weight: 550;
 }
 
 .sidebar-links {
@@ -339,7 +350,7 @@ h1, h2, h3 {
 
 .timeline-item {
   display: grid;
-  grid-template-columns: 120px 1fr;
+  grid-template-columns: 140px 1fr;
   gap: 24px;
   border-left: 2px solid var(--line);
   padding-left: 24px;
@@ -349,6 +360,16 @@ h1, h2, h3 {
 .timeline-period {
   color: var(--text-muted);
   font-size: 0.88rem;
+  font-weight: 500;
+  display: block;
+}
+
+.timeline-location {
+  display: block;
+  color: var(--text-muted);
+  font-size: 0.82rem;
+  margin-top: 4px;
+  opacity: 0.85;
 }
 
 .timeline-content h3 {
@@ -540,21 +561,26 @@ h1, h2, h3 {
 
   .sidebar-nav ul {
     flex-direction: row;
-    gap: 20px;
+    gap: 8px;
   }
 
   .sidebar-nav a {
     border-left: none;
-    border-bottom: 2px solid transparent;
-    padding-left: 0;
-    margin-left: 0;
+    padding: 6px 12px;
+    margin: 0;
     white-space: nowrap;
+    border-radius: 6px;
+    font-size: 0.9rem;
   }
 
-  .sidebar-nav a:hover,
+  .sidebar-nav a:hover {
+    transform: none;
+    background: rgba(31, 75, 153, 0.055);
+  }
+
   .sidebar-nav a.is-active {
-    border-left-color: transparent;
-    border-bottom-color: var(--accent);
+    background: rgba(31, 75, 153, 0.09);
+    color: var(--accent);
   }
 
   .sidebar-links {
