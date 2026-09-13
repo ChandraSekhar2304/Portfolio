@@ -1,5 +1,44 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-  <rect width="32" height="32" rx="6" fill="#1F4B99"/>
-  <polyline points="6,22 12,14 17,18 26,8" fill="none" stroke="#F4F3EF" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
-  <circle cx="26" cy="8" r="2" fill="#E8A33D"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#142850"/>
+      <stop offset="100%" stop-color="#091426"/>
+    </linearGradient>
+    <linearGradient id="lineGrad" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="60%" stop-color="#60a5fa"/>
+      <stop offset="100%" stop-color="#e8a33d"/>
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="0.8" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+
+  <!-- Base Icon Shape -->
+  <rect width="32" height="32" rx="7" fill="url(#bgGrad)" stroke="#234275" stroke-width="1"/>
+
+  <!-- Subtle Data Matrix Nodes -->
+  <circle cx="8" cy="9" r="1" fill="#38bdf8" opacity="0.25"/>
+  <circle cx="16" cy="9" r="1" fill="#38bdf8" opacity="0.2"/>
+  <circle cx="24" cy="9" r="1" fill="#38bdf8" opacity="0.25"/>
+  <circle cx="8" cy="23" r="1" fill="#38bdf8" opacity="0.2"/>
+  <circle cx="16" cy="23" r="1" fill="#38bdf8" opacity="0.25"/>
+
+  <!-- Precision Trend / Model Regression Path -->
+  <path d="M 6 22 L 12 16 L 18 19 L 26 8" 
+        fill="none" 
+        stroke="url(#lineGrad)" 
+        stroke-width="2.2" 
+        stroke-linecap="round" 
+        stroke-linejoin="round"/>
+
+  <!-- Neural Connection Nodes -->
+  <circle cx="6" cy="22" r="1.5" fill="#38bdf8"/>
+  <circle cx="12" cy="16" r="1.5" fill="#60a5fa"/>
+  <circle cx="18" cy="19" r="1.5" fill="#93c5fd"/>
+  
+  <!-- Glowing Target Peak Node -->
+  <circle cx="26" cy="8" r="2.4" fill="#e8a33d" filter="url(#glow)"/>
+  <circle cx="26" cy="8" r="1" fill="#ffffff"/>
 </svg>

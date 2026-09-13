@@ -10,6 +10,15 @@ export default function Sidebar({ sections, active, onNavigate }) {
   return (
     <aside className="sidebar">
       <div className="sidebar-identity">
+        {profile.avatarUrl && (
+          <a href="#intro" onClick={handleClick("intro")} className="sidebar-avatar-link" aria-label={profile.name}>
+            <img
+              src={profile.avatarUrl}
+              alt={profile.name}
+              className="sidebar-avatar"
+            />
+          </a>
+        )}
         <a href="#intro" onClick={handleClick("intro")} className="sidebar-name">
           {profile.name}
         </a>

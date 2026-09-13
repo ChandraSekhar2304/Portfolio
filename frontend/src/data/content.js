@@ -9,6 +9,7 @@ export const profile = {
   tagline: "I turn messy data into models that ship.",
   location: "Hyderabad, India",
   email: "banalachandrasekharkumar@gmail.com",
+  avatarUrl: "/profile.jpg",
   resumeUrl: "https://drive.google.com/file/d/1O_fGm1wIebXmYHw0dHEDi4eULgSdrGik/view?usp=sharing",
   links: [
     { label: "GitHub", href: "https://github.com/ChandraSekhar2304" },
@@ -50,13 +51,23 @@ export const education = [
     ],
   },
   {
-    degree: "Intermediate / Higher Secondary (MPC)",
-    institution: "Junior College",
+    degree: "Intermediate (MPC)",
+    institution: "Sri Chaitanya Junior College",
     period: "2020 — 2022",
-    location: "Andhra Pradesh, India",
+    location: "Repalle, Andhra Pradesh, India",
     details: [
       "Specialized in Mathematics, Physics, and Chemistry (MPC).",
       "Developed a strong analytical foundation in mathematical problem-solving and logic.",
+    ],
+  },
+  {
+    degree: "Secondary School Certificate",
+    institution: "Al Quamar Primary and High School",
+    period: "2019 — 2020",
+    location: "Nizampatnam, Andhra Pradesh, India",
+    details: [
+      "Graduated with top distinction and high academic standing in secondary schooling.",
+      "Built a solid foundational understanding in Mathematics, Science, and Analytical Thinking.",
     ],
   },
 ];
