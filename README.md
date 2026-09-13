@@ -125,15 +125,12 @@ The API documentation is available at `http://localhost:8000/docs`.
 
 ## 📈 Featured Machine Learning Projects
 
-1. **[Customer Churn & Retention Analytics Engine](https://github.com/ChandraSekhar2304/churn-prediction)**
-   - *Architecture:* Raw Telemetry → Feature Engineering → Optuna Tuned XGBoost → FastAPI Service → Docker
-   - *Impact:* Lifted recall on high-risk churners from 41% to 76% at 84% ROC-AUC.
-2. **[Multi-Store Retail Demand Forecasting Engine](https://github.com/ChandraSekhar2304/demand-forecasting)**
-   - *Architecture:* Historical Sales Data → Prophet Seasonality Decomposition → LightGBM Regressor → SQL Pipeline
-   - *Impact:* Reduced demand forecast error (MAPE) from 22% to 13%, mitigating retail stockout risk.
-3. **[NLP Resume & Technical Profile Screener](https://github.com/ChandraSekhar2304/resume-screener)**
-   - *Architecture:* Document Parsing → Tokenization → Fine-Tuned RoBERTa Encoder → Cosine Similarity → REST API
-   - *Impact:* Achieved 91.2% F1-score on skill extraction benchmarks, accelerating screening turnaround by ~60%.
+1. **[Aspect-Based Sentiment Analysis (ABSA) for E-Commerce Reviews](https://github.com/ChandraSekhar2304/aspect-based-sentiment-analysis)**
+   - *Architecture:* Amazon Reviews → Text Preprocessing (Tokenization, Lemmatization) → XLM-RoBERTa + VADER Sentiment Scoring → XGBoost Classifier
+   - *Impact:* Achieved ~90%+ accuracy with strong precision/recall/F1, cutting noise by 30-40% and lifting processing efficiency by ~40%, enabling analysis of up to 15,000 reviews weekly.
+2. **[Deepfake Detection System](https://github.com/ChandraSekhar2304/deepfake-detection-system)**
+   - *Architecture:* Raw Images/Video → OpenCV Face Extraction & Preprocessing → CNN with Transfer Learning → Real/Fake Classification
+   - *Impact:* Achieved ~92-97% accuracy with strong precision/recall on benchmark deepfake datasets, cutting false detections by 15-25% and training time by 40-60% via transfer learning.
 
 ---
 
