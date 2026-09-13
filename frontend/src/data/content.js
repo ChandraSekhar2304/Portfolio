@@ -94,72 +94,53 @@ export const education = [
 
 export const certifications = [
   {
-    title: "Machine Learning & Deep Learning",
-    issuer: "Specialization & Hands-on Projects",
+    title: "Programming, Data Structures and Algorithms using Python",
+    issuer: "NPTEL",
     year: "2024",
-    badge: "ML / Deep Learning",
-    description: "Supervised Learning, Neural Networks, CNNs, Transformer Architectures, and Hyperparameter Optimization.",
-  },
-  {
-    title: "Python for Data Science & ML",
-    issuer: "Applied Practical Mastery",
-    year: "2024",
-    badge: "Data Science",
-    description: "Advanced Pandas, NumPy, Scikit-Learn pipelines, feature engineering, and statistical hypothesis testing.",
-  },
-  {
-    title: "Data Structures & Algorithms in Python",
-    issuer: "Algorithmic Problem Solving",
-    year: "2023",
     badge: "Algorithms",
-    description: "Strong command of dynamic programming, graph algorithms, asymptotic time complexity, and data structures.",
+    description: "Core data structures, algorithmic problem solving, and Python-based implementation of DSA fundamentals.",
   },
   {
-    title: "Kaggle Competitions & Community Contributor",
-    issuer: "Kaggle",
-    year: "Active",
-    badge: "Competitive ML",
-    description: "Building predictive models, competitive feature engineering notebooks, and evaluating real-world datasets.",
+    title: "Introduction to Internet of Things",
+    issuer: "NPTEL",
+    year: "2024",
+    badge: "IoT",
+    description: "Fundamentals of IoT architecture, sensor networks, connected devices, and embedded systems concepts.",
   },
+  {
+    title: "The Joy of Computing using Python",
+    issuer: "NPTEL",
+    year: "2025",
+    badge: "Python",
+    description: "Applied Python programming across computing fundamentals, problem solving, and algorithmic thinking.",
+  }
 ];
 
 export const projects = [
   {
-    id: "churn-prediction",
-    title: "Customer Churn & Retention Analytics Engine",
-    category: "Machine Learning & MLOps",
+    id: "aspect-based-sentiment-analysis",
+    title: "Aspect-Based Sentiment Analysis (ABSA) for E-Commerce Reviews",
+    category: "NLP & Machine Learning",
     year: "2025",
     summary:
-      "Engineered an end-to-end predictive pipeline to identify subscribers at risk of churn 30 days in advance, substituting rule-based heuristics with probabilistic gradient boosting.",
-    pipeline: "Raw Telemetry → Feature Engineering → Optuna Tuned XGBoost → FastAPI Service → Docker",
-    metric: "Lifted recall on at-risk customers from 41% to 76% at 84% ROC-AUC, enabling timely retention interventions.",
-    stack: ["Python", "XGBoost", "Scikit-Learn", "FastAPI", "Docker", "Pandas", "MLflow"],
-    link: "https://github.com/ChandraSekhar2304/churn-prediction",
+      "Built an end-to-end ABSA pipeline for Amazon product reviews to extract aspect-level customer sentiment, pinpointing exactly which product features drive satisfaction or complaints rather than relying on overall star ratings alone.",
+    pipeline: "Amazon Reviews → Text Preprocessing (Tokenization, Lemmatization) → XLM-RoBERTa + VADER Sentiment Scoring → XGBoost Classifier",
+    metric: "Achieved ~90%+ accuracy with strong precision/recall/F1, cutting noise by 30-40% and lifting processing efficiency by ~40%, enabling analysis of up to 15,000 reviews weekly.",
+    stack: ["Python", "NLTK", "Transformers", "XLM-RoBERTa", "VADER", "XGBoost"],
+    link: "https://github.com/ChandraSekhar2304/aspect-based-sentiment-analysis",
   },
   {
-    id: "demand-forecasting",
-    title: "Multi-Store Retail Demand Forecasting Engine",
-    category: "Time-Series & Operations",
-    year: "2024",
+    id: "deepfake-detection-system",
+    title: "Deepfake Detection System",
+    category: "Computer Vision & Deep Learning",
+    year: "2025",
     summary:
-      "Constructed a hierarchical time-series model forecasting weekly SKU-level demand across retail distribution nodes to optimize replenishment schedules and prevent stockouts.",
-    pipeline: "Historical Sales Data → Prophet Seasonality Decomposition → LightGBM Regressor → Automated SQL Pipeline",
-    metric: "Reduced forecast error (MAPE) from 22% to 13%, cutting out-of-stock risk in simulated demand runs.",
-    stack: ["Python", "Prophet", "LightGBM", "PostgreSQL", "Pandas", "Statsmodels"],
-    link: "https://github.com/ChandraSekhar2304/demand-forecasting",
-  },
-  {
-    id: "resume-screener",
-    title: "NLP Resume & Technical Profile Screener",
-    category: "NLP & Transformers",
-    year: "2024",
-    summary:
-      "Fine-tuned transformer encoder models to evaluate and rank technical candidate profiles against complex job descriptions with interpretable token-level attribution.",
-    pipeline: "Document Parsing → Tokenization → Fine-Tuned RoBERTa Encoder → Cosine Similarity & Cross-Attention → REST API",
-    metric: "Achieved 91.2% F1-score across technical skill extraction benchmarks, accelerating screening turnaround by ~60%.",
-    stack: ["Python", "PyTorch", "Hugging Face", "FastAPI", "Docker", "Regex"],
-    link: "https://github.com/ChandraSekhar2304/resume-screener",
-  },
+      "Developed a CNN-based Deepfake Detection system to classify real vs. fake images/videos, addressing the growing risk of synthetic media misuse in security, media, and social-platform applications.",
+    pipeline: "Raw Images/Video → OpenCV Face Extraction & Preprocessing → CNN with Transfer Learning → Real/Fake Classification",
+    metric: "Achieved ~92-97% accuracy with strong precision/recall on benchmark deepfake datasets, cutting false detections by 15-25% and training time by 40-60% via transfer learning.",
+    stack: ["Python", "CNN", "OpenCV", "TensorFlow", "Transfer Learning"],
+    link: "https://github.com/ChandraSekhar2304/deepfake-detection-system",
+  }
 ];
 
 // Fallback compatibility
