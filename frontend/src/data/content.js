@@ -127,7 +127,7 @@ export const projects = [
     pipeline: "Amazon Reviews → Text Preprocessing (Tokenization, Lemmatization) → XLM-RoBERTa + VADER Sentiment Scoring → XGBoost Classifier",
     metric: "Achieved ~90%+ accuracy with strong precision/recall/F1, cutting noise by 30-40% and lifting processing efficiency by ~40%, enabling analysis of up to 15,000 reviews weekly.",
     stack: ["Python", "NLTK", "Transformers", "XLM-RoBERTa", "VADER", "XGBoost"],
-    link: "https://github.com/ChandraSekhar2304/aspect-based-sentiment-analysis",
+    link: "https://github.com/ChandraSekhar2304/Aspect_Based_Sentiment_Analysis",
   },
   {
     id: "deepfake-detection-system",
@@ -139,7 +139,7 @@ export const projects = [
     pipeline: "Raw Images/Video → OpenCV Face Extraction & Preprocessing → CNN with Transfer Learning → Real/Fake Classification",
     metric: "Achieved ~92-97% accuracy with strong precision/recall on benchmark deepfake datasets, cutting false detections by 15-25% and training time by 40-60% via transfer learning.",
     stack: ["Python", "CNN", "OpenCV", "TensorFlow", "Transfer Learning"],
-    link: "https://github.com/ChandraSekhar2304/deepfake-detection-system",
+    link: "https://github.com/ChandraSekhar2304/Deepfake-Detection",
   }
 ];
 
