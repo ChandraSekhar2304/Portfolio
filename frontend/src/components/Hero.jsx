@@ -12,8 +12,27 @@ export default function Hero({ id }) {
       </p>
 
       <div className="hero-actions">
-        <a className="btn btn-primary" href={profile.resumeUrl} target="_blank" rel="noopener noreferrer">
-          View résumé
+        <a
+          className="btn btn-primary"
+          href={profile.resumeUrl}
+          download="Banala_Chandra_Sekhar_Resume.pdf"
+        >
+          <svg
+            width="15"
+            height="15"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2.2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            style={{ marginRight: 7 }}
+          >
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+            <polyline points="7 10 12 15 17 10" />
+            <line x1="12" y1="15" x2="12" y2="3" />
+          </svg>
+          Download résumé
         </a>
         <a className="btn btn-ghost" href="#projects" onClick={(e) => {
           e.preventDefault();

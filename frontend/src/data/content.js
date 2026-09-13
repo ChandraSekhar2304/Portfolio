@@ -11,7 +11,7 @@ export const profile = {
   location: "Hyderabad, India",
   email: "banalachandrasekharkumar@gmail.com",
   avatarUrl: "/profile.jpg",
-  resumeUrl: "https://drive.google.com/file/d/1O_fGm1wIebXmYHw0dHEDi4eULgSdrGik/view?usp=sharing",
+  resumeUrl: "/resume.pdf",
   links: [
     { label: "GitHub", href: "https://github.com/ChandraSekhar2304" },
     { label: "LinkedIn", href: "https://www.linkedin.com/in/banala-naga-bala-chandra-sekhar-kumar-941722291/" },
